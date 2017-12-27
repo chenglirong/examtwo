@@ -1,0 +1,112 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "楷体";
+  text-size-adjust: 100%; }
+
+ul, li {
+  list-style: none; }
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 625%; }
+
+img, div, body, html, ul, li, a {
+  -webkit-touch-callout: none; }
+
+input, button {
+  outline: 0; }
+
+button {
+  cursor: pointer; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #ccc;}
+@mixin num($w,$h){
+    width:$w;
+    height:$h;
+}
+@mixin flex($j){
+    display: flex;
+    justify-content: $j;
+    align-items: center;
+}
+html,body,.wrap{
+    @include num(100%,100%);
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+header{
+    @include num(100%,1rem);
+    @include flex($j:space-between);
+    background: #333;
+    padding:0 .2rem;
+    a{
+        color:#fff;
+        font-size: .36rem;
+        &:nth-child(2){
+            flex:1;
+            margin-left: .3rem;
+        }
+    }
+}
+section{
+    flex:1;
+    overflow-y: hidden;
+    .mark{
+        @include num(100%,100%);
+        @include flex($j:center);
+        background: rgba(0,0,0,.5);
+        .box{
+            @include num(90%,80%);
+            background: #fff;
+            border-radius: .3rem;
+            h3{
+                text-align: center;
+                margin-top:.5rem;
+                img{
+                    @include num(50%,auto);
+                }
+            }
+            h4{
+                font-size: .36rem;
+                text-align: center;
+                line-height: 2;
+            }
+            p{
+                @include num(90%,1rem);
+                margin:0 auto;
+                line-height: 1rem;
+                border-bottom:1px solid #000;
+                img{
+                    @include num(.4rem,auto);
+                }
+                input{
+                    @include num(80%,.5rem);
+                    border:0;
+                }
+            }
+            h5{
+                text-align: center;
+                margin-top:.5rem;
+                button{
+                    @include num(90%,.8rem);
+                    background: #31B977;
+                    margin-top:.3rem;
+                    border:0;
+                    border-radius: .2rem;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
